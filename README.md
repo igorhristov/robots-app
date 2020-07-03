@@ -1,1 +1,1 @@
-# calendar-hooksa-app
+# calendar app with React Hooks

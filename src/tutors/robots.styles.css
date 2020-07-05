@@ -1,0 +1,10 @@
+.robots-body {
+    background: linear-gradient(to left, rgb(7, 3, 70) 0%, rgb(97, 12, 86) 100%);
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 72px;
+    color: #05aff2;
+    margin-top: 0;
+}

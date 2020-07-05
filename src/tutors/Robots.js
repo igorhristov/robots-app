@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardList } from '../components/card-list/card-list-component';
+import { SearchBox } from '../components/search-box/search-box-component';
 
 class Robots extends React.Component {
     constructor() {
@@ -22,11 +23,11 @@ class Robots extends React.Component {
         return (
             <div>
                 <h1>Robots Rolodex</h1>
-                <input
-                    type='search'
-                    placeholder='search robots'
-                    onChange={(e) => this.setState({ searchField: e.target.value })}
+                <SearchBox
+                    handleChange={(e) => this.setState({ searchField: e.target.value })}
+                    placeholder={'search robots'}
                 />
+
                 <CardList robots={filteredMonsters} />
             </div>
         );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardList } from '../components/card-list/card-list-component';
 import { SearchBox } from '../components/search-box/search-box-component';
+import './robots.styles.css'
 
 class Robots extends React.Component {
     constructor() {
@@ -16,17 +17,19 @@ class Robots extends React.Component {
             .then((users) => this.setState({ robots: users }));
     }
 
+    handleChange = (e) => {
+        this.setState({ searchField: e.target.value });
+    };
+
     render() {
         const { robots, searchField } = this.state;
         const filteredMonsters = robots.filter((robot) => robot.name.toLowerCase().includes(searchField.toLowerCase()));
 
         return (
-            <div>
+            <div className="robots-body">
                 <h1>Robots Rolodex</h1>
-                <SearchBox
-                    handleChange={(e) => this.setState({ searchField: e.target.value })}
-                    placeholder={'search robots'}
-                />
+
+                <SearchBox handleChange={this.handleChange} placeholder={'search robots'} />
 
                 <CardList robots={filteredMonsters} />
             </div>
